@@ -44,6 +44,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Use devise for authentication
 gem 'devise'
 
+# Use Cancancan for authorization
+gem 'cancancan'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
