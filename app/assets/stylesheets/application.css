@@ -184,6 +184,7 @@ form .links {
   text-align: left;
   font-weight: bold;
   margin-top: 28px;
+  order: 1;
 }
 
 .category-list {
@@ -220,6 +221,14 @@ h1 {
   border: 1px solid #fff;
   border-radius: 5px;
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.transactions-container ul {
+  display: flex;
+  flex-direction: column;
+  order: 2;
 }
 
 .category-header {
