@@ -79,4 +79,7 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['postgres://benmkt_user:jUXKOJc24Y3aB44FCfiSyJOO7SEYlFsY@dpg-clcevufuj6oc738l2c80-a/benmkt'] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  database: benmkt
+  username: <%= ENV['POSTGRES_USERNAME'] %>
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
