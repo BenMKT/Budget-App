@@ -44,6 +44,9 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 # Use devise for authentication
 gem 'devise'
 
+# Use letter_opener for email previews
+gem 'letter_opener'
+
 # Use Cancancan for authorization
 gem 'cancancan'
 
@@ -59,6 +62,10 @@ group :development, :test do
 
   # The RSpec testing framework
   gem 'rspec-rails'
+
+  gem 'rails-controller-testing'
+
+  gem 'factory_bot_rails'
 
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
