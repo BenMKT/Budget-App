@@ -12,21 +12,21 @@ class TransactionsController < ApplicationController
     @categories = current_user.categories
   end
 
-def create
-  # Get the category from the form submission instead of the instance variable
-  selected_category = Category.find(params[:transaction][:category_id])
+  def create
+    # Get the category from the form submission instead of the instance variable
+    selected_category = Category.find(params[:transaction][:category_id])
 
-  # Build the transaction under the selected category
-  @transaction = selected_category.transactions.build(transaction_params)
+    # Build the transaction under the selected category
+    @transaction = selected_category.transactions.build(transaction_params)
 
-  if @transaction.save
-    # Redirect to the transactions page for the selected category
-    redirect_to category_transactions_path(selected_category), notice: 'Transaction was successfully created.'
-  else
-    # If there are errors, render the form again
-    render :new
+    if @transaction.save
+      # Redirect to the transactions page for the selected category
+      redirect_to category_transactions_path(selected_category), notice: 'Transaction was successfully created.'
+    else
+      # If there are errors, render the form again
+      render :new
+    end
   end
-end
 
   private
 
