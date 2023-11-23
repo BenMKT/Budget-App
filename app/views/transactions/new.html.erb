@@ -1,9 +1,21 @@
-<h1>New transaction</h1>
+<div class="transaction-form-container">
+  <h1 class="transaction-form-header">New Transaction for <%= @category.name %></h1>
 
-<%= render "form", transaction: @transaction %>
+  <%= form_for [@category, @transaction], html: { class: "transaction-form" } do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true, class: "transaction-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :amount %>
+      <%= f.number_field :amount, required: true, class: "transaction-input" %>
+    </div>
+    <div class="field">
+      <%= f.label :category %>
+      <%= f.collection_select :category_id, @categories, :id, :name, {}, { required: true, class: "transaction-input" } %>
+    </div>
+    <%= f.submit 'Save', class: "submit-button" %>
+  <% end %>
 
-<br>
-
-<div>
-  <%= link_to "Back to transactions", transactions_path %>
+  <%= link_to 'Back', category_transactions_path(@category), class: "back-link" %>
 </div>
