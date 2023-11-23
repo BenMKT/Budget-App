@@ -10,15 +10,13 @@ RSpec.describe CategoriesController, type: :controller do
 
   describe 'GET #index' do
     it 'returns a successful response' do
-
       get :index
       expect(response).to be_successful
     end
 
     it 'assigns @categories and @total_amounts' do
-
-      category = create(:category, user: user)
-      create(:transaction, category: category, amount: 50)
+      category = create(:category, user:)
+      create(:transaction, category:, amount: 50)
 
       get :index
       expect(assigns(:categories)).to eq([category])
@@ -26,21 +24,20 @@ RSpec.describe CategoriesController, type: :controller do
     end
   end
 
-describe 'POST #create' do
+  describe 'POST #create' do
+    context 'with invalid parameters' do
+      let(:invalid_attributes) { { name: nil } }
 
-  context 'with invalid parameters' do
-    let(:invalid_attributes) { { name: nil } }
+      it 'does not create a new Category' do
+        expect do
+          post :create, params: { category: invalid_attributes }
+        end.not_to(change { Category.count })
+      end
 
-    it 'does not create a new Category' do
-      expect {
+      it 're-renders the new template' do
         post :create, params: { category: invalid_attributes }
-      }.not_to change { Category.count }
-    end
-
-    it 're-renders the new template' do
-      post :create, params: { category: invalid_attributes }
-      expect(response).to render_template(:new)
+        expect(response).to render_template(:new)
+      end
     end
   end
-end
 end
