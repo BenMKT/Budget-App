@@ -31,6 +31,7 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+  config.include FactoryBot::Syntax::Methods
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
@@ -38,6 +39,12 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  # To use FactoryBot nethods in the tests  
+  # config.include FactoryBot::Syntax::Methods
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::IntegrationHelpers, type: :feature
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
@@ -64,7 +71,13 @@ RSpec.configure do |config|
 end
 
 # To Configure Capybara to use microsoft edge as the browser
-Capybara.default_driver = :selenium_edge
+# Capybara.register_driver :selenium_edge do |app|
+#   Capybara::Selenium::Driver.new(app, browser: :edge)
+# end
+
+# Capybara.default_driver = :selenium_edge
+# Capybara.javascript_driver = :selenium_edge
 
 # To Configure Capybara to use chrome as the browser
 # Capybara.default_driver = :selenium_chrome
+Capybara.javascript_driver = :selenium_chrome
