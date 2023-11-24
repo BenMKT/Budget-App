@@ -2,7 +2,7 @@
 
 # <a name="about-project"> Budget App </a>
 
-💰💼 BMK Smart_Budget is a mobile web application where you can manage your budget: you have a list of transactions associated with a category, so that you can see how much money you spent and on what.
+💰💼 Track and manage your budget effortlessly with this web application. Easily categorize your transactions and gain insights into your spending habits, empowering you to make informed financial decisions..
 
 <!-- TABLE OF CONTENTS -->
 
