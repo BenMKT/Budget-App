@@ -300,6 +300,8 @@ div.new-category-button-container {
   justify-content: center;
   align-items: center;
   background-color: #5fb523;
+  padding: 15px 0;
+  height: 10%;
 }
 
 .transaction-form-header {
