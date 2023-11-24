@@ -295,12 +295,12 @@ a.new-category-button:hover {
 }
 
 div.new-category-button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #5fb523;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #5fb523;
 }
-  
+
 .transaction-form-header {
   background-color: #007bff;
   color: #fff;
