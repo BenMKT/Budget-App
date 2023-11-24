@@ -285,6 +285,7 @@ a.new-category-button {
   display: inline-block;
   border: 1px solid #ddd;
   text-decoration: none;
+  text-align: center;
   color: #fff;
   padding: 15px 0;
   border-radius: 5px;
