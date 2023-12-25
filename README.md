@@ -70,7 +70,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://smartbudgetapp-lwvw.onrender.com)
+- [Live Demo Link](https://smartbudgetapp-v1wv.onrender.com)
 - [Video walkthrough](https://www.loom.com/share/82d94d7cf3df4900a468d3b46393dc0e?sid=752f5d74-c8f0-435b-846c-b82eb1d86731)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
