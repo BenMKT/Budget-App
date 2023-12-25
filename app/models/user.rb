@@ -7,5 +7,5 @@ class User < ApplicationRecord
   has_many :categories
   has_many :transactions, foreign_key: :author_id
 
-  attr_accessor :full_name
+  attr_accessor :name
 end
